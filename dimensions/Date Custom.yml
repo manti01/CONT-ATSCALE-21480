@@ -508,4 +508,16 @@ level_attributes:
 modeler_metadata:
   modified: 'false'
   version: 0
+calculation_groups:
+  - name: StandardMonthCalcs
+    description: 'StandardMonthCalcs'
+    calculated_members:
+    - name: Current
+      description: 'current'
+      expression: '([DateCustom].[StandardMonth].CurrentMember, [Measures].currentMember)'
+      format: '$#,##0.00'
+    - name: StandardMonth QTD
+      description: 'StandardMonth QTD'
+      expression: 'Aggregate(PeriodsToDate([DateCustom].[StandardMonth].[Quarter], [DateCustom].[StandardMonth].CurrentMember),[Measures].currentMember)'
+      format: '#,##0.00'
 type: time

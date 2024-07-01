@@ -4,5 +4,4 @@ label: Internet Sales Reason Count
 calculation_method: count non-null
 column: salesorderlinenumber
 dataset: InternetSalesReason
-format: '#,##0.00'
 visible: false
