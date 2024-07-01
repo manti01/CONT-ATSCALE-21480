@@ -2,8 +2,7 @@ unique_name: Mountain-Bike-Sales-Fixed
 object_type: metric_calc
 label: Mountain-Bike-Sales-Fixed
 expression: >-
-  ([Product].[Product Categories].[Category].&[1],[Product].[Product Model
-  Lines].[Product Line].&[M],[Measures].[Internet Sales Amount Local])
+  ([Product].[Product Categories].[Category].&[1],[Product].[Product Model Lines].[Product Line].&[M],[Measures].[Internet Sales Amount Local])
 format: $#,##0.00
 is_hidden: false
 mdx_aggregate_function: SUM
