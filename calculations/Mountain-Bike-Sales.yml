@@ -1,5 +1,8 @@
 unique_name: Mountain-Bike-Sales
 object_type: metric_calc
 label: Mountain-Bike-Sales
-expression: "([Product].[Product Categories].[Category].&[1],[Product].[Product Model\
-  \ Lines].[Product Line].&[M],[Measures].[Internet Sales Amount Local])"
+expression: >-
+  ([Product].[Product Categories].[Category].&[1],[Product].[Product Model
+  Lines].[Product Line].&[M],[Measures].[Internet Sales Amount Local])
+format: $#,##0.00
+is_hidden: false

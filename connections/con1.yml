@@ -2,5 +2,5 @@ unique_name: con1
 label: con1
 object_type: connection
 as_connection: con1
-database: ATSCALE_SAMPLE_DATA
+database: ci-pipeline-199520
 schema: adventureworks2012
