@@ -522,5 +522,5 @@ calculation_groups:
         name: Year to Date
         description: calcytd
         expression: 'Aggregate(PeriodsToDate([Date Custom].[StandardMonth].[Year], [Date Custom].[StandardMonth].CurrentMember),[Measures].currentMember)'
-        format: '$#,##0.00'
+        format: $#,##0.00
 type: time
