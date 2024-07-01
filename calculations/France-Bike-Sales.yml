@@ -3,3 +3,4 @@ object_type: metric_calc
 label: France-Bike-Sales
 expression: "( [Customer].[Customer Geography].[Customer Country].&[France], [Product].[Product\
   \ Categories].[Category].&[1],[Measures].[Internet Sales Amount Local])"
+format: '$#,##0.00'
