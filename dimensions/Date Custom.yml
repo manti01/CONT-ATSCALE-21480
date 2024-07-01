@@ -521,6 +521,6 @@ calculation_groups:
       - unique_name: StandardMonth QTD
         name: StandardMonth QTD
         description: calcsmqtd
-        expression: 'Aggregate(PeriodsToDate([DateCustom].[StandardMonth].[Quarter], [DateCustom].[StandardMonth].CurrentMember),[Measures].currentMember)'
+        expression: 'Aggregate(PeriodsToDate([Date Custom].[StandardMonth].[Quarter], [Date Custom].[StandardMonth].CurrentMember),[Measures].currentMember)'
         format: '$#,##0.00'
 type: time
