@@ -1,6 +1,25 @@
 unique_name: Date Custom
 object_type: dimension
 label: Date Custom
+calculation_groups:
+  - unique_name: Test Calc Group
+    name: Test Calc Group
+    description: Calc
+    calculated_members:
+      - unique_name: current
+        name: current
+        description: calccurrent
+        expression: >-
+          ([Date Custom].[StandardMonth].CurrentMember,
+          [Measures].currentMember)
+        format: '#,##0.00'
+      - unique_name: StandardMonth QTD
+        name: StandardMonth QTD
+        description: calcsmqtd
+        expression: >-
+          Aggregate(PeriodsToDate([Date Custom].[StandardMonth].[Quarter], [Date
+          Custom].[StandardMonth].CurrentMember),[Measures].currentMember)
+        format: $#,##0.00
 hierarchies:
   - unique_name: StandardMonth
     label: StandardMonth
@@ -387,7 +406,7 @@ level_attributes:
     dataset: DateCustom
     key_columns:
       - half_year
-    name_column: half_year
+    name_column: half_year_name
     sort_column: half_year
     time_unit: halfyear
   - unique_name: ISO 8601 Day
@@ -508,19 +527,4 @@ level_attributes:
 modeler_metadata:
   modified: 'false'
   version: 0
-calculation_groups:
-  - unique_name: Test Calc Group
-    name: Test Calc Group
-    description: Calc
-    calculated_members: 
-      - unique_name: current
-        name: current
-        description: calccurrent
-        expression: '([Date Custom].[StandardMonth].CurrentMember, [Measures].currentMember)'
-        format: '#,##0.00'
-      - unique_name: StandardMonth QTD
-        name: StandardMonth QTD
-        description: calcsmqtd
-        expression: 'Aggregate(PeriodsToDate([Date Custom].[StandardMonth].[Quarter], [Date Custom].[StandardMonth].CurrentMember),[Measures].currentMember)'
-        format: '$#,##0.00'
 type: time
