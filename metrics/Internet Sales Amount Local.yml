@@ -3,7 +3,7 @@ object_type: metric
 label: Internet Sales Amount Local
 description: URDH = Repeated Values
 calculation_method: sum
-column: salesamount_1
+column: salesamount
 dataset: Internet Sales
 format: '#,##0.00'
 unrelated_dimensions_handling: repeat
