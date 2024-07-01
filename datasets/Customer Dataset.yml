@@ -1,0 +1,90 @@
+unique_name: Customer Dataset
+object_type: dataset
+label: Customer Dataset
+connection_id: con1
+table: dimcustomer
+
+columns:
+  - name: addressline1
+    data_type: string
+  - name: addressline2
+    data_type: string
+  - name: birthdate
+    data_type: date
+  - name: commutedistance
+    data_type: string
+  - name: commutedistancesort
+    data_type: "decimal(1,0)"
+    sql: "\n            CASE\n              WHEN \"commutedistance\" = '0-1 Miles'\
+      \ THEN 1 \n              WHEN \"commutedistance\" = '1-2 Miles' THEN 2\n   \
+      \           WHEN \"commutedistance\" = '2-5 Miles' THEN 3\n              WHEN\
+      \ \"commutedistance\" = '5-10 Miles' THEN 4\n              WHEN \"commutedistance\"\
+      \ = '10+ Miles' THEN 5\n            END\n          "
+  - name: customeralternatekey
+    data_type: string
+  - name: customerkey
+    data_type: "decimal(38,0)"
+  - name: datefirstpurchase
+    data_type: date
+  - name: emailaddress
+    data_type: string
+  - name: englisheducation
+    data_type: string
+  - name: englishoccupation
+    data_type: string
+  - name: firstname
+    data_type: string
+  - name: frencheducation
+    data_type: string
+  - name: frenchoccupation
+    data_type: string
+  - name: fullname
+    data_type: string
+    sql: "\n            CASE\n              WHEN \"middlename\" IS NULL THEN CONCAT(\"\
+      firstname\", ' ', \"lastname\")\n              ELSE CONCAT(\"firstname\", '\
+      \ ', \"middlename\", '.', ' ', \"lastname\")\n            END\n          "
+  - name: gender
+    data_type: string
+  - name: genderdesc
+    data_type: string
+    sql: CASE WHEN "gender" = 'M' THEN 'Male' ELSE 'Female' END
+  - name: geographykey
+    data_type: "decimal(38,0)"
+  - name: houseownerdesc
+    data_type: string
+    sql: CASE WHEN "houseownerflag" = 1 THEN 'Yes' ELSE 'No' END
+  - name: houseownerflag
+    data_type: "decimal(38,0)"
+  - name: lastname
+    data_type: string
+  - name: maritalstatus
+    data_type: string
+  - name: maritalstatusdesc
+    data_type: string
+    sql: CASE WHEN "maritalstatus" = 'S' THEN 'Single' ELSE 'Married' END
+  - name: middlename
+    data_type: string
+  - name: namestyle
+    data_type: boolean
+  - name: numbercarsowned
+    data_type: "decimal(38,0)"
+  - name: numberchildrenathome
+    data_type: "decimal(38,0)"
+  - name: phone
+    data_type: string
+  - name: simpledatefirstpurchase
+    data_type: string
+    sql: "DAY(\"datefirstpurchase\") ||' '|| MONTH(\"datefirstpurchase\") || ', '\
+      \ || YEAR(\"datefirstpurchase\")"
+  - name: spanisheducation
+    data_type: string
+  - name: spanishoccupation
+    data_type: string
+  - name: suffix
+    data_type: string
+  - name: title
+    data_type: string
+  - name: totalchildren
+    data_type: "decimal(38,0)"
+  - name: yearlyincome
+    data_type: double
