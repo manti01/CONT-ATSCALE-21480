@@ -67,7 +67,7 @@ columns:
     data_type: string
   - name: productlinename
     data_type: string
-    sql: CASE trim(\"productline\") WHEN 'M' THEN 'Mountain' WHEN 'R' THEN 'Road' WHEN
+    sql: CASE trim(productline) WHEN 'M' THEN 'Mountain' WHEN 'R' THEN 'Road' WHEN
       'S' THEN 'Accessory' WHEN 'T' THEN 'Touring' ELSE 'Components' END
   - name: productsubcategorykey
     data_type: "decimal(38,0)"
