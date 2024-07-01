@@ -238,6 +238,9 @@ metrics:
 
   - unique_name: RNG_SM_Sum-IOC
     folder: TimeRelative
+    
+  - unique_name: Mountain-Bike-Sales-Fixed
+    folder: Tuple
 
   - unique_name: RangeLagSum-IOC
     folder: TimeRelative
